@@ -6,7 +6,7 @@ class DiceRollCommands extends commando.Command {
             name: 'roll',
             group: 'random',
             memberName: 'roll',
-            discription: 'rolls a die'
+            discription: "rolls a die",
         });
     }
 
