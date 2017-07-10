@@ -1,0 +1,25 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "This is the roboy reg",
+  "main": "mybot.js",
+  "scripts": {
+    "test": "{"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Imgundams/JavascriptRound2.git"
+  },
+  "keywords": [
+    "discordTest"
+  ],
+  "author": "Dan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Imgundams/JavascriptRound2/issues"
+  },
+  "homepage": "https://github.com/Imgundams/JavascriptRound2#readme",
+  "dependencies": {
+    "discord.js": "^11.1.0"
+  }
+}
