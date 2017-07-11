@@ -24,7 +24,7 @@ class DiceRollCommand extends commando.Command {
     }
     async run(message, args) {
         const { dieSize } = args;
-        if (args.dieSize / 1 == args.dieSize) {
+        if (args.dieSize / 1 === args.dieSize) {
             var roll = Math.floor(Math.random() * args.dieSize) + 1;
             message.reply("You rolled a " + roll);
         }else{
