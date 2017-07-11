@@ -10,7 +10,6 @@ class DiceRollCommand extends commando.Command {
                 description: 'Rolls a dice',
                 example: 'roll 6',
 
-
                 args:
                 [
                     {
