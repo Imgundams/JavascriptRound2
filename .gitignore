@@ -4,6 +4,8 @@ style.css
 styles.css
 styles.scss
 SuperSecretSite.html
-commands/weather
+commands/weather/base
+commands/weather/font
+commands/weather/icons
 .DS_store
 commands/weather/weatherToken.js

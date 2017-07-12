@@ -1,4 +1,6 @@
 const commando = require('discord.js-commando');
+const diceroll = require("../functionality/func_dice_roll.js");
+
 
 class DiceRollCommand extends commando.Command {
     constructor(bot) {
@@ -9,7 +11,6 @@ class DiceRollCommand extends commando.Command {
                 memberName: 'roll',
                 description: 'Rolls a dice',
                 example: 'roll 6',
-
                 args:
                 [
                     {
@@ -23,13 +24,7 @@ class DiceRollCommand extends commando.Command {
         )
     }
     async run(message, args) {
-        const { dieSize } = args;
-        if (args.dieSize / 1 === args.dieSize) {
-            var roll = Math.floor(Math.random() * args.dieSize) + 1;
-            message.reply("You rolled a " + roll);
-        }else{
-            message.reply(args.dieSize + " is not a valid number, please enter a number after the roll.")
-        }
+        message.reply(diceroll.diceroll(args));
     }
 }
 module.exports = DiceRollCommand;

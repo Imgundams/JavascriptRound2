@@ -4,7 +4,6 @@ const userID = privateStuff.user
 const weathertoken = privateStuff.weatherKey;
 const commando = require('discord.js-commando');
 const path = require('path');
-// const bot = new commando.Client();
 const bot = new commando.CommandoClient({
     owner: userID,
 	commandPrefix: '?',
@@ -12,7 +11,8 @@ const bot = new commando.CommandoClient({
 });
 bot.registry.registerGroups([
         ['random', 'Random group'],
-        ['weather', 'Weather group']
+        ['weather', 'Weather group'],
+        ['exercises','Exercises group']
     ])
             .registerDefaults()
             .registerCommandsIn(__dirname + "/commands");

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blockmaker</title>
+</head>
+<body>
+<br>
+	<input type="button" onclick="blockmaker()"; value="Build The Boxes!" /></br></button>
+	<input type="text" placeholder="Word" id="word"></br>
+	<input type="text" placeholder="Width" id="width"></br>
+	<input type="text"placeholder="Hight" id="height"></br>
+<br>
+	<div>
+		</br>
+		
+		<p id="bloop"></p>
+		
+	</div>
+<script>
+	function blockmaker(){
+	var w,g,word ;
+	word = document.getElementById("word");
+	w = 		document.getElementById("width").value;
+	h = 		document.getElementById("height").value;
+	document.getElementById("bloop").innerHTML = word;
+	}
+</script>
+
+</body>
+</html>
