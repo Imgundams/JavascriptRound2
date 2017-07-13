@@ -1,42 +1,12 @@
 const privateStuff = require("../../token");
 const darkskykey = privateStuff.darkskykey;
 const weathertoken = privateStuff.weatherKey;
-const commando = require('discord.js-commando');
-const rainCheck = require("../functionality/func_darksky.js");
 
-class DarkSky extends commando.Command {
-    constructor(bot) {
-        super(bot,
-            {
-                name: 'rain',
-                group: 'weather',
-                memberName: 'darksky',
-                description: 'Tells you if and when its going to rain?',
-                example: 'weather london,uk',
-
-                args:
-                [
-                    {
-                        key: 'location',
-                        prompt: 'Where do you want me to check the weather at?',
-                        type: 'string',
-                        infinite: false
-                    }
-                ]
-            }
-        )
-    }
-    async run(message, args) {
-        console.log("stage 1 " + args.location);
-        RainCheck(message, args);
-    }
-}
-
-function RainCheck(message, args) {
+function RainCheck(args) {
     console.log("stage 2 " + args.location);
     let longitude;
     let latitude;
-    let rainString = "";
+    let rainString ="";
     let keepYourPromises = new Promise(function (resolve, reject) {
         let request = require('request')
             , url = "http://api.openweathermap.org/data/2.5/weather?q=" + args.location + "&units=metric&appid=" + weathertoken;
@@ -48,15 +18,14 @@ function RainCheck(message, args) {
                 longitude = parseFloat(jsonWeather.coord.lon.toString());
                 latitude = parseFloat(jsonWeather.coord.lat.toString());
                 console.log("stage 4 Lat: " + latitude + " Lon: " + longitude);
-                let locationString = "For " + args.location + " at the latitude: " + latitude + " and the Longitude: " + longitude;
-                let latlong = { latitude, longitude, locationString };
+                let locationString ="For " + args.location + " at the latitude: " + latitude + " and the Longitude: " + longitude;
+                let latlong = { latitude, longitude, locationString};
                 resolve(latlong);
             }
             else {
                 console.log("Can't find location");
-                message.reply("You clearly don't know where you are.");
                 reject("You clearly don't know where you are.");
-
+                
             }
         })
     })
@@ -69,19 +38,21 @@ function RainCheck(message, args) {
             var jsonWeather = JSON.parse(body);
             console.log("stage 6 Weather is currently: " + jsonWeather.minutely.summary + " Later today: " + jsonWeather.hourly.summary);
             if (jsonWeather && (jsonWeather.code != "400")) {
-                rainString = a.locationString.concat("\nCurrently the weather: " + jsonWeather.minutely.summary + "\nLater today: " + jsonWeather.hourly.summary + "\nThis week: " + jsonWeather.daily.summary);
-                message.reply(rainString);
+                rainString= a.locationString.concat("\nCurrently the weather: " + jsonWeather.minutely.summary + "\nLater today: " + jsonWeather.hourly.summary + "\nThis week: " + jsonWeather.daily.summary);
+                return fetch(rainString);
             }
             else {
                 reject(error);
                 // message.reply("You clearly don't know where you are.");
             }
         })
+        return rainString;
     }, (a) => {
         console.log(a);
-        message.reply(a + ". DarkSky Servers are down look outside and forcast the weather yourself.");
+        return a+". DarkSky Servers are down look outside and forcast the weather yourself."
     })
+    return rainString;
 }
-
-
-module.exports = DarkSky;
+module.exports = {
+    RainCheck
+}

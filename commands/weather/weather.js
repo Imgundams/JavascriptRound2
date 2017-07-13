@@ -33,15 +33,15 @@ class TheWeather extends commando.Command {
         let request = require('request')
     , url = "http://api.openweathermap.org/data/2.5/weather?q="+args.location+"&units=metric&appid="+weathertoken;
      request(url,(error, response, body)=> {
-            console.log('error:', error); // Print the error if one occurred 
-            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
-            console.log('body:', body); // Print the HTML for the Google homepage. 
+            // console.log('error:', error); // Print the error if one occurred 
+            // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
+            // console.log('body:', body); // Print the HTML for the Google homepage. 
             var jsonWeather = JSON.parse(body);
-            if (jsonWeather) {
+            if (jsonWeather && (jsonWeather.cod.toString() != "404" )) {
                   message.reply(openWeather.openWeather(jsonWeather));
             }
             else {
-                message.reply("No amount advice will help you.");
+                message.reply("You clearly don't know where you are.");
             }
         })
     }

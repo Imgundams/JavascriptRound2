@@ -10,16 +10,20 @@ var assert = require("assert");
 
 describe('diceroll', function () {
   it("Should output a random number between 1 and 7", function () {
-    var input = "7 ";
-    var output = diceroll.diceroll(input);
+    let input = "7 ";
+    let output = diceroll.diceroll(input);
     assert.ok(Boolean(output));
   });
   it("Should output a random negative number between 1 and 100", function () {
-    var input = "100 ";
-    var output = diceroll.diceroll(input);
+    let input = "100 ";
+    let output = diceroll.diceroll(input);
     assert.ok(Boolean(output));
   });
 });
-
+describe('openWeatherAPI', function(){
+  it("It should return a the weather for the location given", function(){
+    let input = "manchester";
+    let output = "";
+    
+  });
 });
-
