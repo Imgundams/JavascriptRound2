@@ -70,7 +70,7 @@ function RainCheck(message, args) {
             console.log("stage 6 Weather is currently: " + jsonWeather.minutely.summary + " Later today: " + jsonWeather.hourly.summary);
             if (jsonWeather && (jsonWeather.code != "400")) {
                 rainString = a.locationString.concat("\nCurrently the weather: " + jsonWeather.minutely.summary + "\nLater today: " + jsonWeather.hourly.summary + "\nThis week: " + jsonWeather.daily.summary);
-                message.reply(rainString);
+                message.reply(rainString, __dirname + "/../icons/day.png", "day.png"); //+ emoji[1]);
             }
             else {
                 reject(error);
@@ -81,7 +81,61 @@ function RainCheck(message, args) {
         console.log(a);
         message.reply(a + ". DarkSky Servers are down look outside and forcast the weather yourself.");
     })
+ //   function picReturn(weatherDescription)
 }
+
+let emoji = [
+    ':cloud_tornado:',
+    ':thunder_cloud_rain: :worried:',
+    ':thunder_cloud_rain:',
+    ':thunder_cloud_rain:',
+    ':thunder_cloud_rain:',
+    ':sweat_drops: :snowflake:',
+    ':cloud_rain:',
+    ':cloud_snow:',
+    ':snowflake: :cloud_rain:',
+    ':cloud_rain:',
+    ':snowflake: :cloud_rain:',
+    ':cloud_rain:',
+    ':cloud_rain:',
+    ':cloud_snow:',
+    ':cloud_snow:',
+    ':dash: :cloud_snow:',
+    ':cloud_snow: :snowman:',
+    ':snowflake:',
+    ':snowflake:',
+    ':foggy:',
+    ':foggy:',
+    ':foggy',
+    ':fog:',
+    ':dash:',
+    ':dash:',
+    ':cold_sweat:',
+    ':cloud:',
+    ':cloud: :crescent_moon: :cloud:',
+    ':white_sun_cloud:',
+    ':cloud: :crescent_moon: :cloud:',
+    ':white_sun_small_cloud:',
+    ':full_moon:',
+    ':sun_with_face: ',
+    ':cloud: :full_moon:',
+    ':white_sun_cloud:',
+    ':cloud_rain:',
+    ':sunny:',
+    ':thunder_cloud_rain:',
+    ':thunder_cloud_rain:',
+    ':thunder_cloud_rain:',
+    ':cloud_rain:',
+    ':cloud_snow: :cloud_snow:',
+    ':cloud_snow: :snowflake:',
+    ':cloud_snow: :snowman: :snowflake:',
+    ':white_sun_cloud:',
+    ':thunder_cloud_rain:',
+    ':cloud_snow:',
+    ':thunder_cloud_rain:',
+    ''
+]
+
 
 
 module.exports = DarkSky;

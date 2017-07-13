@@ -4,6 +4,7 @@ const userID = privateStuff.user
 const weathertoken = privateStuff.weatherKey;
 const commando = require('discord.js-commando');
 const path = require('path');
+process.on('unhandledRejection',console.error);
 const bot = new commando.CommandoClient({
     owner: userID,
 	commandPrefix: '?',
@@ -16,6 +17,11 @@ bot.registry.registerGroups([
     ])
             .registerDefaults()
             .registerCommandsIn(__dirname + "/commands");
-bot.login(token);
 
+            bot.login(token);
+
+bot.on("message", (message)=>{
+    if(message.content =="fun"||message.content =="yay")
+        message.reply("Stop having fun!");
+})
 console.log("Roboy ONLINE!");

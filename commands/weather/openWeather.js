@@ -35,7 +35,7 @@ class TheWeather extends commando.Command {
         weather.setAPPID(weathertoken)
         weather.setUnits('metric');
         weatherInfomation = weatherInfomation.concat(args.location)
-
+        
         weather.getTemperature(function (err, temp) {
             weatherInfomation = weatherInfomation.concat(" is currently at a temperature of " + temp + "°C");
             // get the Atm Pressure 
