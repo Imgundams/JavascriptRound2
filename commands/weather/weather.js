@@ -10,7 +10,7 @@ class WeatherBetter extends commando.Command {
     constructor(bot) {
         super(bot,
             {
-                name: "weth",
+                name: "weather",
                 group: "weather",
                 memberName: "weth",
                 description: "Tells you the weather outside.",
@@ -35,13 +35,8 @@ class WeatherBetter extends commando.Command {
             // console.log("error:", error); // Print the error if one occurred 
             // console.log("statusCode:", response && response.statusCode); // Print the response status code if a response was received 
             // console.log("body:", body); // Print the HTML for the Google homepage. 
-            var jsonWeather = JSON.parse(body);
-            if (jsonWeather && (jsonWeather.cod.toString() !== "404" )) {
-                  message.reply(openWeather.openWeather(jsonWeather));
-            }
-            else {
-                message.reply("You clearly don't know where you are.");
-            }
+            let jsonWeather = JSON.parse(body);
+            message.reply(openWeather.openWeather(jsonWeather));
         });
     }
 }

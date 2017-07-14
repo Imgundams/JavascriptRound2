@@ -24,7 +24,7 @@ class DiceRollCommand extends commando.Command {
         );
     }
     async run(message, args) {
-        message.reply(diceroll.diceroll(args));
+        message.reply("You rolled a " + diceroll.diceroll(args.dieSize));
     }
 }
 module.exports = DiceRollCommand;

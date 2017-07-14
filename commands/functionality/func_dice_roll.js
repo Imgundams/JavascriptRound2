@@ -1,10 +1,10 @@
 function diceroll(args) {
-    var numberToWorkWith = parseInt(args.dieSize);
+    let numberToWorkWith = parseInt(args);
     if (numberToWorkWith / 1 === numberToWorkWith) {
-        var roll = Math.floor(Math.random() * numberToWorkWith) + 1;
-        return ("You rolled a " + roll);
+        let roll = Math.floor(Math.random() * numberToWorkWith) + 1;
+        return (roll);
     } else {
-        return ("You rolled a nothing.");
+        return ("nothing");
     }
 }
 module.exports = { diceroll };

@@ -27,13 +27,14 @@ class Kings extends commando.Command {
     }
 
     async run(message, args) {
+        let name = args.name;
 
         request(url, (error, response, body) => {
             if (error) {
                 message.reply("The King json is down, I can't help you with your request.");
             }
             else {
-                let moreArgs = { body, args };
+                let moreArgs = { body, name };
                 message.reply(royalty.findKing(moreArgs));
             }
         });
