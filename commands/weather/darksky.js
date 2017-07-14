@@ -15,7 +15,7 @@ function rainCheck(message, args) {
         request(url, (error, response, body) => {
             var jsonWeather = JSON.parse(body);
 
-            if (jsonWeather && (jsonWeather.cod.toString() != "404")) {
+            if (jsonWeather && (jsonWeather.cod.toString() !== "404")) {
                 // console.log("stage 3 lat: " + jsonWeather.coord.lat + ", long: " + jsonWeather.coord.lon);
                 longitude = parseFloat(jsonWeather.coord.lon.toString());
                 latitude = parseFloat(jsonWeather.coord.lat.toString());
@@ -30,7 +30,7 @@ function rainCheck(message, args) {
                 reject("You clearly don't know where you are.");
 
             }
-        })
+        });
     })
     keepYourPromises.then((a) => {
         // console.log("stage 5 Lat: " + a.latitude + " Lon: " + a.longitude);
@@ -45,15 +45,14 @@ function rainCheck(message, args) {
                 message.reply(rainString);
             }
             else {
-                reject(error);
-                // message.reply("You clearly don't know where you are.");
+                message.reply("You clearly don't know where you are.");
             }
-        })
+        });
     }, (a) => {
         // console.log(a);
         message.reply(a + ". DarkSky Servers are down look outside and forcast the weather yourself.");
     })
- //   function picReturn(weatherDescription)
+    //   function picReturn(weatherDescription)
 }
 
 class DarkSky extends commando.Command {

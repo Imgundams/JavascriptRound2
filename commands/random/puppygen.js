@@ -12,7 +12,7 @@ class PuppyPoster extends commando.Command {
         });
     }
     async run(message, args) {
-        randompuppy().then ((url) => message.reply("I detected somebody saying pup, I like! Here is a picture of a pup. " + url));
-        }
+        randompuppy().then((url) => message.reply("I detected somebody saying pup, I like! Here is a picture of a pup. " + url));
+    }
 }
 module.exports = PuppyPoster;

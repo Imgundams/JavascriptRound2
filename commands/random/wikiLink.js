@@ -21,10 +21,12 @@ class WikiLink extends commando.Command {
     async run(message, args) {
 
         function parseLink(stringToParse) {
-            if (stringToParse.webpage.includes("?"))
+            if (stringToParse.webpage.includes("?")) {
                 return stringToParse.webpage.substring(0, stringToParse.webpage.indexOf("?"));
-            else
+            }
+            else {
                 return stringToParse.webpage.toString();
+            }
         }
 
         message.reply("https://en.wikipedia.org/wiki/" + parseLink(args));

@@ -3,4 +3,4 @@ function openWeather(jsonWeather) {
     return weatherString;
 }
 
-module.exports = {openWeather};
+module.exports = { openWeather };
