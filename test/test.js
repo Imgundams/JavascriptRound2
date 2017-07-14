@@ -1,7 +1,10 @@
 const diceroll = require("../commands/functionality/func_dice_roll.js");
 const openWeather = require("../commands/functionality/func_openweather.js");
+const rainCheckFunc = require("../commands/functionality/func_darksky.js");
+const findme = require("../commands/functionality/func_location.js");
 const royalty = require("../commands/functionality/func_royal.js");
 const privateStuff = require("../token");
+const darkskykey = privateStuff.darkskykey;
 const weathertoken = privateStuff.weatherKey;
 var assert = require("assert");
 
@@ -37,7 +40,7 @@ describe("openWeatherAPI", function () {
       , url = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=metric&appid=" + weathertoken;
     request(url, (error, response, body) => {
       let jsonWeather = JSON.parse(body);
-      assert.equal(openWeather.openWeather(input), "You clearly don't know where you are.")
+      assert.equal(openWeather.openWeather(input), "You clearly don't know where you are.");
 
     });
   });
@@ -49,7 +52,7 @@ describe("openWeatherAPI", function () {
       , url = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=metric&appid=" + weathertoken;
     request(url, (error, response, body) => {
       let jsonWeather = JSON.parse(body);
-      assert.equal(jsonWeather.name, input)
+      assert.equal(jsonWeather.name, input);
 
     });
   });
@@ -62,7 +65,7 @@ describe("royalty", function () {
     let request = require("request")
       , url = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kingsfake.json";
     request(url, (error, response, body) => {
-      assert.ok(error)
+      assert.ok(error);
     });
   });
 
@@ -73,9 +76,9 @@ describe("royalty", function () {
     let name = "Cnut";
 
     request(url, (error, response, body) => {
-        let moreArgs = { body, name };
-        assert.equal(royalty.findKing(moreArgs),"For the Royalty Cnut, United Kingdom, House of Denmark, 1016-1035");
-      });
+      let moreArgs = { body, name };
+      assert.equal(royalty.findKing(moreArgs), "For the Royalty Cnut, United Kingdom, House of Denmark, 1016-1035");
+    });
   });
 
 });
