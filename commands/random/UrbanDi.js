@@ -1,18 +1,18 @@
-const commando = require('discord.js-commando');
+const commando = require("discord.js-commando");
 
 class UrbanDictionary extends commando.Command {
     constructor(bot) {
         super(bot, {
-            name: 'whats',
-            group: 'random',
-            memberName: 'whats',
-            description: 'Finds the UrbanDictionary entry of a word.',
-            example: 'whats scrub',
+            name: "whats",
+            group: "random",
+            memberName: "whats",
+            description: "Finds the UrbanDictionary entry of a word.",
+            example: "whats scrub",
             args: [
                 {
-                    key: 'word',
-                    prompt: 'What should I look for? Underscroll for spaces please.',
-                    type: 'string',
+                    key: "word",
+                    prompt: "What should I look for? Underscroll for spaces please.",
+                    type: "string",
                     infinite: false
                 }
             ]
@@ -20,7 +20,7 @@ class UrbanDictionary extends commando.Command {
     }
     async run(message, args) {
         let whatWord = args.word.toString();
-        let request = require('request')
+        let request = require("request")
             , url = "http://api.urbandictionary.com/v0/define?term=" + whatWord;
         request(url, (error, response, body) => {
             if (error) {

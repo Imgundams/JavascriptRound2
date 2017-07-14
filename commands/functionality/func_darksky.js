@@ -8,7 +8,7 @@ function RainCheck(args) {
     let latitude;
     let rainString ="";
     let keepYourPromises = new Promise(function (resolve, reject) {
-        let request = require('request')
+        let request = require("request")
             , url = "http://api.openweathermap.org/data/2.5/weather?q=" + args.location + "&units=metric&appid=" + weathertoken;
         request(url, (error, response, body) => {
             var jsonWeather = JSON.parse(body);
@@ -32,7 +32,7 @@ function RainCheck(args) {
     keepYourPromises.then((a) => {
         // console.log("stage 5 Lat: " + a.latitude + " Lon: " + a.longitude);
 
-        let request = require('request')
+        let request = require("request")
             , url = "https://api.darksky.net/forecast/" + darkskykey + "/" + a.latitude + "," + a.longitude + "?units=si";
         request(url, (error, response, body) => {
             var jsonWeather = JSON.parse(body);

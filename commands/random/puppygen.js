@@ -1,14 +1,14 @@
-const commando = require('discord.js-commando');
-const randompuppy = require('random-puppy')
+const commando = require("discord.js-commando");
+const randompuppy = require("random-puppy")
 
 class PuppyPoster extends commando.Command {
     constructor(bot) {
         super(bot, {
-            name: 'pup',
-            group: 'random',
-            memberName: 'pup',
+            name: "pup",
+            group: "random",
+            memberName: "pup",
             description: "Posts a puppy",
-            example: 'pup'
+            example: "pup"
         });
     }
     async run(message, args) {

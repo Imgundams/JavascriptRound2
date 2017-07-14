@@ -1,8 +1,8 @@
 const privateStuff = require("../../token");
 const weathertoken = privateStuff.weatherKey;
 const commando = require("discord.js-commando");
-var weather = require('openweather-apis');
-weather.setLang('en');
+var weather = require("openweather-apis");
+weather.setLang("en");
 var weatherInfomation = "The Weather in ";
 
 
@@ -11,18 +11,18 @@ class TheWeather extends commando.Command {
     constructor(bot) {
         super(bot,
             {
-                name: 'weather',
-                group: 'weather',
-                memberName: 'weather',
+                name: "weather",
+                group: "weather",
+                memberName: "weather",
                 description: "Tells you the weather outside.",
-                example: 'weather london,uk',
+                example: "weather london,uk",
 
                 args:
                 [
                     {
-                        key: 'location',
+                        key: "location",
                         prompt: "Where do you want me to check the weather at?",
-                        type: 'string',
+                        type: "string",
                         infinite: false
                     }
                 ]
@@ -33,7 +33,7 @@ class TheWeather extends commando.Command {
         // const { location: string } = args;
         weather.setCity(args.location);
         weather.setAPPID(weathertoken)
-        weather.setUnits('metric');
+        weather.setUnits("metric");
         weatherInfomation = weatherInfomation.concat(args.location)
         
         weather.getTemperature(function (err, temp) {

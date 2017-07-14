@@ -1,6 +1,6 @@
-const commando = require('discord.js-commando');
+const commando = require("discord.js-commando");
 const royalty = require("../functionality/func_royal.js");
-let request = require('request')
+let request = require("request")
     , url = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json";
 
 
@@ -8,17 +8,17 @@ class Kings extends commando.Command {
     constructor(bot) {
         super(bot,
             {
-                name: 'royalty',
-                group: 'random',
-                memberName: 'royalty',
-                description: 'Gives you infomation on a British royalty king or queen.',
-                example: 'royalty Henry I',
+                name: "royalty",
+                group: "random",
+                memberName: "royalty",
+                description: "Gives you infomation on a British royalty king or queen.",
+                example: "royalty Henry I",
                 args:
                 [
                     {
-                        key: 'name',
-                        prompt: 'Whats the name of the royalty',
-                        type: 'string',
+                        key: "name",
+                        prompt: "Whats the name of the royalty",
+                        type: "string",
                         infinite: false
                     }
                 ]

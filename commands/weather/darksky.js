@@ -2,24 +2,24 @@ const privateStuff = require("../../token");
 const darkskykey = privateStuff.darkskykey;
 const weathertoken = privateStuff.weatherKey;
 const commando = require("discord.js-commando");
-const rainCheck = require("../functionality/func_darksky.js");
+const rainCheckFunc = require("../functionality/func_darksky.js");
 
 class DarkSky extends commando.Command {
     constructor(bot) {
         super(bot,
             {
-                name: 'rain',
-                group: 'weather',
-                memberName: 'rain',
+                name: "rain",
+                group: "weather",
+                memberName: "rain",
                 description: "Tells you if and when its going to rain?",
-                example: 'weather london,uk',
+                example: "weather london,uk",
 
                 args:
                 [
                     {
-                        key: 'location',
-                        prompt: 'Where do you want me to check the weather at?',
-                        type: 'string',
+                        key: "location",
+                        prompt: "Where do you want me to check the weather at?",
+                        type: "string",
                         infinite: false
                     }
                 ]
@@ -37,7 +37,7 @@ function rainCheck(message, args) {
     let latitude;
     let rainString = "";
     let keepYourPromises = new Promise(function (resolve, reject) {
-        let request = require('request')
+        let request = require("request")
             , url = "http://api.openweathermap.org/data/2.5/weather?q=" + args.location + "&units=metric&appid=" + weathertoken;
         request(url, (error, response, body) => {
             var jsonWeather = JSON.parse(body);
@@ -62,7 +62,7 @@ function rainCheck(message, args) {
     keepYourPromises.then((a) => {
         // console.log("stage 5 Lat: " + a.latitude + " Lon: " + a.longitude);
 
-        let request = require('request')
+        let request = require("request")
             , url = "https://api.darksky.net/forecast/" + darkskykey + "/" + a.latitude + "," + a.longitude + "?units=si";
         request(url, (error, response, body) => {
             var jsonWeather = JSON.parse(body);

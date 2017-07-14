@@ -1,14 +1,14 @@
 const commando = require("discord.js-commando");
-const request = require('request')
-                    ,url = 'http://api.adviceslip.com/advice';
+const request = require("request")
+                    ,url = "http://api.adviceslip.com/advice";
 
 class LifeAdvice extends commando.Command {
     constructor(bot) {
         super(bot,
             {
-                name: 'advice',
-                group: 'random',
-                memberName: 'advice',
+                name: "advice",
+                group: "random",
+                memberName: "advice",
                 description: "Gives you advice.",
                 example: "advice",
             }

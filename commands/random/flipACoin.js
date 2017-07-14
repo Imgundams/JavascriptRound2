@@ -1,13 +1,13 @@
-const commando = require('discord.js-commando');
+const commando = require("discord.js-commando");
 
 class coinFlipCommand extends commando.Command {
     constructor(bot) {
         super(bot, {
-            name: 'coinflip',
-            group: 'random',
-            memberName: 'coinflip',
-            description: 'Flip a coin',
-            example: 'coinflip'
+            name: "coinflip",
+            group: "random",
+            memberName: "coinflip",
+            description: "Flip a coin",
+            example: "coinflip"
         });
     }
     async run(message, args) {

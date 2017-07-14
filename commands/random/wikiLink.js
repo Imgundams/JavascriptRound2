@@ -1,18 +1,18 @@
-const commando = require('discord.js-commando');
+const commando = require("discord.js-commando");
 
 class WikiLink extends commando.Command {
     constructor(bot) {
         super(bot, {
-            name: 'wiki',
-            group: 'random',
-            memberName: 'wiki',
-            description: 'Posts the wikipedia page of entry.',
-            example: 'wiki bear',
+            name: "wiki",
+            group: "random",
+            memberName: "wiki",
+            description: "Posts the wikipedia page of entry.",
+            example: "wiki bear",
             args: [
                 {
-                    key: 'webpage',
-                    prompt: 'What page should I look for? Underscroll for spaces please.',
-                    type: 'string',
+                    key: "webpage",
+                    prompt: "What page should I look for? Underscroll for spaces please.",
+                    type: "string",
                     infinite: false
                 }
             ]
