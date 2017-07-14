@@ -6,7 +6,7 @@ let weatherInfomation = "The Weather in ";
 
 
 
-class TheWeather extends commando.Command {
+class nolibs extends commando.Command {
     constructor(bot) {
         super(bot,
             {
