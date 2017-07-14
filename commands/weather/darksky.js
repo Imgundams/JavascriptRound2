@@ -1,7 +1,7 @@
 const privateStuff = require("../../token");
 const darkskykey = privateStuff.darkskykey;
 const weathertoken = privateStuff.weatherKey;
-const commando = require('discord.js-commando');
+const commando = require("discord.js-commando");
 const rainCheck = require("../functionality/func_darksky.js");
 
 class DarkSky extends commando.Command {
@@ -11,7 +11,7 @@ class DarkSky extends commando.Command {
                 name: 'rain',
                 group: 'weather',
                 memberName: 'darksky',
-                description: 'Tells you if and when its going to rain?',
+                description: "Tells you if and when its going to rain?",
                 example: 'weather london,uk',
 
                 args:
@@ -23,16 +23,15 @@ class DarkSky extends commando.Command {
                         infinite: false
                     }
                 ]
-            }
-        )
+            });
     }
     async run(message, args) {
         console.log("stage 1 " + args.location);
-        RainCheck(message, args);
+        rainCheck(message, args);
     }
 }
 
-function RainCheck(message, args) {
+function rainCheck(message, args) {
     console.log("stage 2 " + args.location);
     let longitude;
     let latitude;
@@ -85,55 +84,55 @@ function RainCheck(message, args) {
 }
 
 let emoji = [
-    ':cloud_tornado:',
-    ':thunder_cloud_rain: :worried:',
-    ':thunder_cloud_rain:',
-    ':thunder_cloud_rain:',
-    ':thunder_cloud_rain:',
-    ':sweat_drops: :snowflake:',
-    ':cloud_rain:',
-    ':cloud_snow:',
-    ':snowflake: :cloud_rain:',
-    ':cloud_rain:',
-    ':snowflake: :cloud_rain:',
-    ':cloud_rain:',
-    ':cloud_rain:',
-    ':cloud_snow:',
-    ':cloud_snow:',
-    ':dash: :cloud_snow:',
-    ':cloud_snow: :snowman:',
-    ':snowflake:',
-    ':snowflake:',
-    ':foggy:',
-    ':foggy:',
-    ':foggy',
-    ':fog:',
-    ':dash:',
-    ':dash:',
-    ':cold_sweat:',
-    ':cloud:',
-    ':cloud: :crescent_moon: :cloud:',
-    ':white_sun_cloud:',
-    ':cloud: :crescent_moon: :cloud:',
-    ':white_sun_small_cloud:',
-    ':full_moon:',
-    ':sun_with_face: ',
-    ':cloud: :full_moon:',
-    ':white_sun_cloud:',
-    ':cloud_rain:',
-    ':sunny:',
-    ':thunder_cloud_rain:',
-    ':thunder_cloud_rain:',
-    ':thunder_cloud_rain:',
-    ':cloud_rain:',
-    ':cloud_snow: :cloud_snow:',
-    ':cloud_snow: :snowflake:',
-    ':cloud_snow: :snowman: :snowflake:',
-    ':white_sun_cloud:',
-    ':thunder_cloud_rain:',
-    ':cloud_snow:',
-    ':thunder_cloud_rain:',
-    ''
+    ":cloud_tornado:",
+    ":thunder_cloud_rain: :worried:",
+    ":thunder_cloud_rain:",
+    ":thunder_cloud_rain:",
+    ":thunder_cloud_rain:",
+    ":sweat_drops: :snowflake:",
+    ":cloud_rain:",
+    ":cloud_snow:",
+    ":snowflake: :cloud_rain:",
+    ":cloud_rain:",
+    ":snowflake: :cloud_rain:",
+    ":cloud_rain:",
+    ":cloud_rain:",
+    ":cloud_snow:",
+    ":cloud_snow:",
+    ":dash: :cloud_snow:",
+    ":cloud_snow: :snowman:",
+    ":snowflake:",
+    ":snowflake:",
+    ":foggy:",
+    ":foggy:",
+    ":foggy",
+    ":fog:",
+    ":dash:",
+    ":dash:",
+    ":cold_sweat:",
+    ":cloud:",
+    ":cloud: :crescent_moon: :cloud:",
+    ":white_sun_cloud:",
+    ":cloud: :crescent_moon: :cloud:",
+    ":white_sun_small_cloud:",
+    ":full_moon:",
+    ":sun_with_face: ",
+    ":cloud: :full_moon:",
+    ":white_sun_cloud:",
+    ":cloud_rain:",
+    ":sunny:",
+    ":thunder_cloud_rain:",
+    ":thunder_cloud_rain:",
+    ":thunder_cloud_rain:",
+    ":cloud_rain:",
+    ":cloud_snow: :cloud_snow:",
+    ":cloud_snow: :snowflake:",
+    ":cloud_snow: :snowman: :snowflake:",
+    ":white_sun_cloud:",
+    ":thunder_cloud_rain:",
+    ":cloud_snow:",
+    ":thunder_cloud_rain:",
+    ""
 ]
 
 

@@ -1,6 +1,6 @@
 const privateStuff = require("../../token");
 const weathertoken = privateStuff.weatherKey;
-const commando = require('discord.js-commando');
+const commando = require("discord.js-commando");
 var weather = require('openweather-apis');
 weather.setLang('en');
 var weatherInfomation = "The Weather in ";
@@ -14,14 +14,14 @@ class TheWeather extends commando.Command {
                 name: 'weather',
                 group: 'weather',
                 memberName: 'weather',
-                description: 'Tells you the weather outside.',
+                description: "Tells you the weather outside.",
                 example: 'weather london,uk',
 
                 args:
                 [
                     {
                         key: 'location',
-                        prompt: 'Where do you want me to check the weather at?',
+                        prompt: "Where do you want me to check the weather at?",
                         type: 'string',
                         infinite: false
                     }
