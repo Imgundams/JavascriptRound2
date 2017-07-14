@@ -14,6 +14,4 @@ function findKing(args) {
     }
 }
 
-module.exports = {
-    findKing
-};
+module.exports = {findKing};

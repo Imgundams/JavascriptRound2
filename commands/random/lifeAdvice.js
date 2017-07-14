@@ -26,6 +26,4 @@ class LifeAdvice extends commando.Command {
         });
     }
 }
-module.exports = {
-    LifeAdvice
-};
+module.exports = LifeAdvice;

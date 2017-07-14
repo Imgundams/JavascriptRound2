@@ -53,6 +53,4 @@ function RainCheck(args) {
     })
     return rainString;
 }
-module.exports = {
-    RainCheck
-};
+module.exports = {RainCheck};

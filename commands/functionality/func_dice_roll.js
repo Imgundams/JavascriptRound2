@@ -7,6 +7,4 @@ function diceroll(args){
             return("You rolled a nothing.");
         }
 }
-module.exports = {
-    diceroll
-};
+module.exports = {diceroll};

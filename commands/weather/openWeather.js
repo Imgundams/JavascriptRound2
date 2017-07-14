@@ -56,6 +56,4 @@ class TheWeather extends commando.Command {
     }
 
 }
-module.exports = {
-    TheWeather
-};
+module.exports = TheWeather;

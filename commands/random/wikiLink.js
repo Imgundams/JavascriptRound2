@@ -29,7 +29,5 @@ class WikiLink extends commando.Command {
 
         message.reply("https://en.wikipedia.org/wiki/" + parseLink(args));
     }
-
-
 }
 module.exports = WikiLink;

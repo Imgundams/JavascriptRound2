@@ -38,7 +38,5 @@ class UrbanDictionary extends commando.Command {
         });
     }
 }
-module.exports = {
-    UrbanDictionary
-};
+module.exports = UrbanDictionary;
 

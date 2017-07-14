@@ -32,6 +32,4 @@ class Google extends commando.Command {
     }
 
 }
-module.exports = {
-    Google
-};
+module.exports = Google;

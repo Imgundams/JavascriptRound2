@@ -19,6 +19,4 @@ class coinFlipCommand extends commando.Command {
             }
     }
 }
-module.exports = {
-    coinFlipCommand
-};
+module.exports = coinFlipCommand;

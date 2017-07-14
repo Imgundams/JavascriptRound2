@@ -27,6 +27,4 @@ class DiceRollCommand extends commando.Command {
         message.reply(diceroll.diceroll(args));
     }
 }
-module.exports = {
-    DiceRollCommand
-};
+module.exports = DiceRollCommand;

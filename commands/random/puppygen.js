@@ -15,6 +15,4 @@ class PuppyPoster extends commando.Command {
         randompuppy().then ((url) => message.reply("I detected somebody saying pup, I like! Here is a picture of a pup. " + url));
         }
 }
-module.exports = {
-    PuppyPoster
-};
+module.exports = PuppyPoster;
