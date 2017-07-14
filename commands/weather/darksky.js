@@ -31,7 +31,7 @@ function rainCheck(message, args) {
 
             }
         });
-    })
+    });
     keepYourPromises.then((a) => {
         // console.log("stage 5 Lat: " + a.latitude + " Lon: " + a.longitude);
 

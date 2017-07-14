@@ -45,7 +45,7 @@ function RainCheck(args) {
 
                 return ("You clearly don't know where you are.");
             }
-        })
+        });
         return rainString;
     }, (a) => {
         // console.log(a);

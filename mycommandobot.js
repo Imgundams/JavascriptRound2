@@ -4,7 +4,9 @@ const userID = privateStuff.user;
 const weathertoken = privateStuff.weatherKey;
 const commando = require("discord.js-commando");
 const path = require("path");
-process.on("unhandledRejection", error);
+process.on("unhandledRejection", function(reason, p){
+    // console.log("Possibly Unhandled Rejection at: Promise ", p, " reason: ", reason);
+});
 const bot = new commando.CommandoClient({
     owner: userID,
     commandPrefix: "?",
