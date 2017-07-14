@@ -25,8 +25,6 @@ function RainCheck(args) {
             else {
                 // console.log("Can't find location");
                 return "You clearly don't know where you are.";
-                reject("You clearly don't know where you are.");
-
             }
         });
     });

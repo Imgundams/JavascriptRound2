@@ -28,20 +28,20 @@ class WeatherBetter extends commando.Command {
     }
     async run(message, args) {
         let location = args.location;
-        let loc = location
+        let loc = location;
         let request = require("request")
             , url = "http://api.openweathermap.org/data/2.5/weather?q=" + loc + "&units=metric&appid=" + weathertoken;
         request(url, (error, response, body) => {
-            console.log(loc);
+            // console.log(loc);
             let jsonWeather = JSON.parse(body);
             let longitude = parseFloat(jsonWeather.coord.lon.toString());
             let latitude = parseFloat(jsonWeather.coord.lat.toString());
-            console.log(latitude + " " + longitude);
+            // console.log(latitude + " " + longitude);
             if (error) {
                 message.reply("You clearly don't know where you are.");
             }
             else {
-                console.log(latitude + " " + loc + " " + longitude);
+                // console.log(latitude + " " + loc + " " + longitude);
                 message.reply("The location of " + loc + " is at \nLatitude: " + latitude + "\nLongitude: " + longitude);
             }
         });
