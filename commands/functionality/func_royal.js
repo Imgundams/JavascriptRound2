@@ -8,7 +8,7 @@ function findKing(args) {
 
     for (let i = 0; i < royalty.length; i++) {
         if (royalty[i].nm === kingName) {
-            output = output + ", " + royalty[i].cty + ", " + royalty[i].hse + ", " + royalty[i].yrs;
+            output += output + ", " + royalty[i].cty.toString() + ", " + royalty[i].hse.toString() + ", " + royalty[i].yrs.toString();
             return output;
         }
     }
