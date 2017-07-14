@@ -25,8 +25,7 @@ class WeatherBetter extends commando.Command {
                         infinite: false
                     }
                 ]
-            }
-        )
+            });
     }
     async run(message, args) {
 

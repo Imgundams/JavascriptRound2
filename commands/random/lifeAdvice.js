@@ -11,8 +11,7 @@ class LifeAdvice extends commando.Command {
                 memberName: "advice",
                 description: "Gives you advice.",
                 example: "advice",
-            }
-        )
+            });
     }
 
     async run(message, args) {
@@ -24,6 +23,9 @@ class LifeAdvice extends commando.Command {
             else {
                 message.reply("No amount advice will help you.");
             }
-        })}
+        });
+    }
 }
-module.exports = LifeAdvice;
+module.exports = {
+    LifeAdvice
+};

@@ -27,4 +27,6 @@ class WordFlip extends commando.Command {
         message.reply(flipped);
     }
 }
-module.exports = WordFlip;
+module.exports = {
+    WordFlip
+};

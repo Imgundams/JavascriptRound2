@@ -23,7 +23,7 @@ class Kings extends commando.Command {
                     }
                 ]
             }
-        )
+        );
     }
 
     async run(message, args) {
@@ -36,7 +36,7 @@ class Kings extends commando.Command {
                 let moreArgs = { body, args };
                 message.reply(royalty.findKing(moreArgs));
             }
-        })
+        });
     }
 }
 module.exports = Kings;

@@ -1,5 +1,5 @@
 const commando = require("discord.js-commando");
-const randompuppy = require("random-puppy")
+const randompuppy = require("random-puppy");
 
 class PuppyPoster extends commando.Command {
     constructor(bot) {
@@ -15,4 +15,6 @@ class PuppyPoster extends commando.Command {
         randompuppy().then ((url) => message.reply("I detected somebody saying pup, I like! Here is a picture of a pup. " + url));
         }
 }
-module.exports = PuppyPoster;
+module.exports = {
+    PuppyPoster
+};

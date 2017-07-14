@@ -13,7 +13,7 @@ function RainCheck(args) {
         request(url, (error, response, body) => {
             var jsonWeather = JSON.parse(body);
 
-            if (jsonWeather && (jsonWeather.cod.toString() != "404")) {
+            if (jsonWeather && (jsonWeather.cod.toString() !== "404")) {
                 // console.log("stage 3 lat: " + jsonWeather.coord.lat + ", long: " + jsonWeather.coord.lon);
                 longitude = parseFloat(jsonWeather.coord.lon.toString());
                 latitude = parseFloat(jsonWeather.coord.lat.toString());
@@ -37,7 +37,7 @@ function RainCheck(args) {
         request(url, (error, response, body) => {
             var jsonWeather = JSON.parse(body);
             // console.log("stage 6 Weather is currently: " + jsonWeather.minutely.summary + " Later today: " + jsonWeather.hourly.summary);
-            if (jsonWeather && (jsonWeather.code != "400")) {
+            if (jsonWeather && (jsonWeather.code !== "400")) {
                 rainString= a.locationString.concat("\nCurrently the weather: " + jsonWeather.minutely.summary + "\nLater today: " + jsonWeather.hourly.summary + "\nThis week: " + jsonWeather.daily.summary);
                 return fetch(rainString);
             }
@@ -55,4 +55,4 @@ function RainCheck(args) {
 }
 module.exports = {
     RainCheck
-}
+};

@@ -4,33 +4,6 @@ const weathertoken = privateStuff.weatherKey;
 const commando = require("discord.js-commando");
 const rainCheckFunc = require("../functionality/func_darksky.js");
 
-class DarkSky extends commando.Command {
-    constructor(bot) {
-        super(bot,
-            {
-                name: "rain",
-                group: "weather",
-                memberName: "rain",
-                description: "Tells you if and when its going to rain?",
-                example: "weather london,uk",
-
-                args:
-                [
-                    {
-                        key: "location",
-                        prompt: "Where do you want me to check the weather at?",
-                        type: "string",
-                        infinite: false
-                    }
-                ]
-            });
-    }
-    async run(message, args) {
-        // console.log("stage 1 " + args.location);
-        rainCheck(message, args);
-    }
-}
-
 function rainCheck(message, args) {
     // console.log("stage 2 " + args.location);
     let longitude;
@@ -67,7 +40,7 @@ function rainCheck(message, args) {
         request(url, (error, response, body) => {
             var jsonWeather = JSON.parse(body);
             // console.log("stage 6 Weather is currently: " + jsonWeather.minutely.summary + " Later today: " + jsonWeather.hourly.summary);
-            if (jsonWeather && (jsonWeather.code != "400")) {
+            if (jsonWeather && (jsonWeather.code !== "400")) {
                 rainString = a.locationString.concat("\nCurrently the weather: " + jsonWeather.minutely.summary + "\nLater today: " + jsonWeather.hourly.summary + "\nThis week: " + jsonWeather.daily.summary);
                 message.reply(rainString);
             }
@@ -82,6 +55,35 @@ function rainCheck(message, args) {
     })
  //   function picReturn(weatherDescription)
 }
+
+class DarkSky extends commando.Command {
+    constructor(bot) {
+        super(bot,
+            {
+                name: "rain",
+                group: "weather",
+                memberName: "rain",
+                description: "Tells you if and when its going to rain?",
+                example: "weather london,uk",
+
+                args:
+                [
+                    {
+                        key: "location",
+                        prompt: "Where do you want me to check the weather at?",
+                        type: "string",
+                        infinite: false
+                    }
+                ]
+            });
+    }
+    async run(message, args) {
+        // console.log("stage 1 " + args.location);
+        rainCheck(message, args);
+    }
+}
+
+
 
 let emoji = [
     ":cloud_tornado:",
@@ -133,7 +135,7 @@ let emoji = [
     ":cloud_snow:",
     ":thunder_cloud_rain:",
     ""
-]
+];
 
 
 

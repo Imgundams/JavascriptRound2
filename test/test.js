@@ -20,10 +20,10 @@ describe("diceroll", function () {
     assert.ok(Boolean(output));
   });
 });
-describe("openWeatherAPI", function(){
-  it("It should return a the weather for the location given", function(){
+describe("openWeatherAPI", function () {
+  it("It should return a the weather for the location given", function () {
     let input = "manchester";
     let output = "";
-    
+
   });
 });

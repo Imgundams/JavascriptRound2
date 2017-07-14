@@ -27,15 +27,15 @@ class TheWeather extends commando.Command {
                     }
                 ]
             }
-        )
+        );
     }
     async run(message, args) {
         // const { location: string } = args;
         weather.setCity(args.location);
-        weather.setAPPID(weathertoken)
+        weather.setAPPID(weathertoken);
         weather.setUnits("metric");
-        weatherInfomation = weatherInfomation.concat(args.location)
-        
+        weatherInfomation = weatherInfomation.concat(args.location);
+
         weather.getTemperature(function (err, temp) {
             weatherInfomation = weatherInfomation.concat(" is currently at a temperature of " + temp + "°C");
             // get the Atm Pressure 
@@ -46,9 +46,9 @@ class TheWeather extends commando.Command {
                     weatherInfomation = weatherInfomation.concat(", with the humidity at " + hum + "%");
                     // get the Description of the weather condition 
                     weather.getDescription(function (err, desc) {
-                        console.log(desc);
-                        message.reply(weatherInfomation + "\nIn other words the weather outside is\n" + desc)
-                        weatherInfomation ="";
+                        // console.log(desc);
+                        message.reply(weatherInfomation + "\nIn other words the weather outside is\n" + desc);
+                        weatherInfomation = "";
                     });
                 });
             });
@@ -56,4 +56,6 @@ class TheWeather extends commando.Command {
     }
 
 }
-module.exports = TheWeather;
+module.exports = {
+    TheWeather
+};

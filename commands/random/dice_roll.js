@@ -21,10 +21,12 @@ class DiceRollCommand extends commando.Command {
                     }
                 ]
             }
-        )
+        );
     }
     async run(message, args) {
         message.reply(diceroll.diceroll(args));
     }
 }
-module.exports = DiceRollCommand;
+module.exports = {
+    DiceRollCommand
+};

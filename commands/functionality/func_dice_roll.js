@@ -4,9 +4,9 @@ function diceroll(args){
             var roll = Math.floor(Math.random() * numberToWorkWith) + 1;
             return("You rolled a " + roll);
         }else{
-            return("You rolled a nothing.")
+            return("You rolled a nothing.");
         }
 }
 module.exports = {
     diceroll
-}
+};

@@ -29,7 +29,7 @@ class UrbanDictionary extends commando.Command {
             else {
                 let jsonData = JSON.parse(body);
                 if (jsonData.result_type.toString() === "no_results") {
-                    message.reply("Can't find anything about it.")
+                    message.reply("Can't find anything about it.");
                 }
                 else {
                     message.reply("For the Word " + whatWord + "\nIt most likely defined as: " + jsonData.list[0].definition + "\nAn example of it's use is: " + jsonData.list[0].example);
@@ -38,5 +38,7 @@ class UrbanDictionary extends commando.Command {
         });
     }
 }
-module.exports = UrbanDictionary;
+module.exports = {
+    UrbanDictionary
+};
 
