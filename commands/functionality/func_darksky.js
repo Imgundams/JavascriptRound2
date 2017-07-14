@@ -50,7 +50,7 @@ function RainCheck(args) {
     }, (a) => {
         // console.log(a);
         return a + ". DarkSky Servers are down look outside and forcast the weather yourself.";
-    })
+    });
     return rainString;
 }
 module.exports = { RainCheck };

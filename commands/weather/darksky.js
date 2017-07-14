@@ -51,7 +51,7 @@ function rainCheck(message, args) {
     }, (a) => {
         // console.log(a);
         message.reply(a + ". DarkSky Servers are down look outside and forcast the weather yourself.");
-    })
+    });
     //   function picReturn(weatherDescription)
 }
 
